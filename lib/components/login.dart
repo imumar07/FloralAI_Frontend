@@ -5,7 +5,7 @@ import 'package:myappflutter/components/register_page.dart';
 import 'package:myappflutter/components/sign_in_button.dart';
 
 class Login extends StatelessWidget {
-  Login({Key? key}) : super(key: key);
+  Login({super.key});
 
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
@@ -18,18 +18,18 @@ class Login extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Image.asset('assets/FloralAI.png', height: 130, width: 130),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Text(
                 'Welcome Please Login To Continue',
                 style: TextStyle(color: Colors.grey.shade700, fontSize: 16),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               MyTextField(
@@ -37,7 +37,7 @@ class Login extends StatelessWidget {
                 hintText: 'Enter Username',
                 obsecureText: false,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               MyTextField(
@@ -45,7 +45,7 @@ class Login extends StatelessWidget {
                 hintText: 'Enter Password',
                 obsecureText: true,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               GestureDetector(
@@ -70,7 +70,7 @@ class Login extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               SignInButton(
@@ -79,7 +79,7 @@ class Login extends StatelessWidget {
                 passwordController: passwordController,
                 context: context,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               GestureDetector(

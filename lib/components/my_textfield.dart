@@ -18,7 +18,7 @@ class MyTextField extends StatelessWidget {
         controller: controller,
         obscureText: obsecureText,
         decoration: InputDecoration(
-            border: OutlineInputBorder(),
+            border: const OutlineInputBorder(),
             fillColor: Colors.white,
             hintText: hintText,
             hintStyle: TextStyle(color: Colors.grey.shade500),

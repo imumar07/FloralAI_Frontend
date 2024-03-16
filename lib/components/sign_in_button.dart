@@ -8,16 +8,15 @@ class SignInButton extends StatelessWidget {
   final String text;
   final BuildContext context; // Add context here
   const SignInButton(
-      {Key? key,
+      {super.key,
       required this.text,
       required this.usernameController,
       required this.passwordController,
-      required this.context}) // Pass context to the constructor
-      : super(key: key);
+      required this.context});
 
   void onPressed() async {
-    String username = this.usernameController.text;
-    String password = this.passwordController.text;
+    String username = usernameController.text;
+    String password = passwordController.text;
     Uri url = Uri.parse("http://localhost:8080/send-data");
     Map<String, String> headers = {"Content-type": "application/json"};
 
@@ -28,7 +27,9 @@ class SignInButton extends StatelessWidget {
       print('Data sent successfully');
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => ImageUploadWidget()), // Replace AnotherPage() with the page you want to navigate to
+        MaterialPageRoute(
+            builder: (context) =>
+                const ImageUploadWidget()), // Replace AnotherPage() with the page you want to navigate to
       );
     } else {
       print('Failed to send data. Status code: ${response.statusCode}');
@@ -39,7 +40,7 @@ class SignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(5),
-      margin: const EdgeInsets.symmetric(horizontal: 120),
+      margin: const EdgeInsets.symmetric(horizontal: 150),
       decoration: BoxDecoration(
         color: Colors.black,
         borderRadius: BorderRadius.circular(8),
